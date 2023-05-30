@@ -1,0 +1,7 @@
+@typeparam TItem
+@inherits InputBase<TItem[]>
+@code {
+    [Parameter, EditorRequired]
+    public TItem[] Options { get; set; } = null!;
+    protected override bool TryParseValueFromString(string? value, out TItem[] result, out string validationErrorMessage) => throw new NotImplementedException();
+}

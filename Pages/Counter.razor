@@ -8,12 +8,16 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
+<SelectMultiple @bind-Value="Selected" Options="Options" />
+
 @code {
     private int currentCount = 0;
 
-    private void IncrementCount()
+    private void IncrementCount(MouseEventArgs ea)
     {
         currentCount++;
     }
 
+    string[] Selected { get; set; } = Array.Empty<string>();
+    string[] Options { get; }
 }
